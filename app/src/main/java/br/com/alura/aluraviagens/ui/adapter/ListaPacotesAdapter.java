@@ -69,7 +69,7 @@ public class ListaPacotesAdapter extends BaseAdapter {
     }
 
     private void mostraDias(View viewItemPacote, Pacote pacote) {
-        TextView dias = viewItemPacote.findViewById(R.id.item_pacote_dias);
+        TextView dias = viewItemPacote.findViewById(R.id.item_pacote_dia);
         String diasEmTexto = DiasUtil.formataEmTexto(pacote.getDias());
         dias.setText(diasEmTexto);
     }
