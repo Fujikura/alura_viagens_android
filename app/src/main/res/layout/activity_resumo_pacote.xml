@@ -66,5 +66,20 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
-        tools:text="Preço Final" />
+        android:text="Preço Final"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/botao_redondo_laranja"
+        android:text="REALIZAR PAGAMENTO"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
