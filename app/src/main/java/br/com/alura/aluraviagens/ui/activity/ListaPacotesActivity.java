@@ -1,4 +1,4 @@
-package br.com.alura.aluraviagens.activity;
+package br.com.alura.aluraviagens.ui.activity;
 
 import android.os.Bundle;
 import android.widget.ListView;
