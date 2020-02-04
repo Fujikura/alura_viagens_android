@@ -10,6 +10,7 @@
         android:id="@+id/resumo_pacote_imagem"
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:contentDescription="@string/imagem_resumo_pacote"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +70,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/resumo_pacote_valor"
         app:layout_constraintEnd_toEndOf="@+id/resumo_pacote_valor"
-        android:text="Preço Final"/>
+        android:text="@string/preco_final"/>
 
     <Button
 
@@ -78,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/botao_redondo_laranja"
-        android:text="REALIZAR PAGAMENTO"
+        android:text="@string/realizar_pagamento"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
