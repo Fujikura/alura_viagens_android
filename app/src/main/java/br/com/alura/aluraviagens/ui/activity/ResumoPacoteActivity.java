@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import br.com.alura.aluraviagens.R;
 import br.com.alura.aluraviagens.model.Pacote;
@@ -22,6 +24,8 @@ public class ResumoPacoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_pacote);
+
+        setTitle("Resumo do pacote");
 
         Pacote pacote = new Pacote
                 ("São Paulo", "sao_paulo_sp", 2, new BigDecimal("243.99"));
@@ -41,5 +45,22 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         TextView preco = findViewById(R.id.resumo_pacote_valor);
         String moedaBrasileira = MoedaUtil.formataMoedaBrasileira(pacote.getPreco());
         preco.setText(moedaBrasileira);
+
+
+        TextView data = findViewById(R.id.resumo_pacote_data);
+
+        Calendar dataIda = Calendar.getInstance();
+        Calendar dataVolta = Calendar.getInstance();
+        dataVolta.add(Calendar.DATE, pacote.getDias());
+        SimpleDateFormat formatoBrasileiro =
+                new SimpleDateFormat("dd/MM");
+        String dataFormatadaIda = formatoBrasileiro.format(dataIda.getTime());
+        String dataFormatadaVolta = formatoBrasileiro.format(dataVolta.getTime());
+        String dataFormatadaViagem = dataFormatadaIda + " - " +
+                dataFormatadaVolta + " de " +
+                dataVolta.get(Calendar.YEAR);
+        data.setText(dataFormatadaViagem);
+
+
     }
 }
