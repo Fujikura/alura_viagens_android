@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.PagamentoActivity">
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,21 +11,17 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/pagamento_informacao"
+            android:id="@+id/pagamento_orientacao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="Digite as informações do cartão de crédito que você deseja usar para o pagamento"
+            android:layout_margin="20dp"
+            android:text="@string/pagamento_orientacao"
             android:textAlignment="center"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/pagamento_label_valor_compra"
@@ -34,13 +29,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
-            android:text="Valor da compra:"
+            android:text="@string/pagamento_valor_da_compra"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pagamento_informacao" />
+            app:layout_constraintTop_toBottomOf="@+id/pagamento_orientacao" />
 
         <TextView
-            android:id="@+id/pagamento_valor_da_compra"
+            android:id="@+id/pagamento_preco_pacote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -54,73 +49,72 @@
             android:id="@+id/pagamento_numero_cartao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:hint="Número do cartão"
+            android:layout_margin="8dp"
+            android:hint="@string/numero_cartao"
             android:inputType="number"
             android:maxLength="12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pagamento_valor_da_compra"/>
+            app:layout_constraintTop_toBottomOf="@id/pagamento_preco_pacote"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/pagamento_mes_cartao"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:hint="MM"
+            android:hint="@string/mm"
             android:inputType="number"
             android:maxLength="2"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="@id/pagamento_numero_cartao"
-            app:layout_constraintTop_toBottomOf="@id/pagamento_numero_cartao" />
+            app:layout_constraintTop_toBottomOf="@id/pagamento_numero_cartao"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/pagamento_ano_cartao"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:hint="AA"
+            android:hint="@string/aa"
             android:inputType="number"
             android:maxLength="2"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@id/pagamento_mes_cartao"
-            app:layout_constraintStart_toEndOf="@id/pagamento_mes_cartao" />
+            app:layout_constraintStart_toEndOf="@id/pagamento_mes_cartao"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/pagamento_cvc_cartao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_cvc_cartao_de_credito"
-            android:hint="CVC"
+            android:hint="@string/pagamento_cvc"
             android:inputType="number"
             android:maxLength="3"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@id/pagamento_ano_cartao"
-            app:layout_constraintEnd_toEndOf="@id/pagamento_numero_cartao" />
+            app:layout_constraintEnd_toEndOf="@id/pagamento_numero_cartao"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/pagamento_nome_cartao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:digits="abcdefghijklmnopqrstuvwxyzçABCDEFGHIJKLMNOPQRSTUVWXYZÇ "
-            android:hint="Nome no cartão"
+            android:layout_margin="8dp"
+            android:digits="@string/mascara_nome_no_cartao"
+            android:hint="@string/pagamento_nome_cartao"
             android:inputType="text|textCapWords"
             app:layout_constraintEnd_toEndOf="@id/pagamento_cvc_cartao"
             app:layout_constraintStart_toStartOf="@id/pagamento_mes_cartao"
-            app:layout_constraintTop_toBottomOf="@id/pagamento_cvc_cartao" />
+            app:layout_constraintTop_toBottomOf="@id/pagamento_cvc_cartao"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/pagamento_botao_finalizar_compra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_margin="8dp"
             android:background="@drawable/botao_redondo_laranja"
-            android:text="FINALIZAR COMPRA"
+            android:text="@string/pagamento_botao_finalizar_compra"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="@id/pagamento_mes_cartao"
             app:layout_constraintStart_toStartOf="@id/pagamento_mes_cartao"
