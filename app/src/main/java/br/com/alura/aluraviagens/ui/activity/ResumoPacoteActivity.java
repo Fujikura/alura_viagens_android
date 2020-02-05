@@ -2,6 +2,7 @@ package br.com.alura.aluraviagens.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -24,6 +25,9 @@ public class ResumoPacoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_pacote);
+
+        Intent intent = new Intent(this, PagamentoActivity.class);
+        startActivity(intent);
 
         setTitle(TITULO_APPBAR);
 
