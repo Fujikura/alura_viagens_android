@@ -60,3 +60,4 @@ public class ResumoCompraActivity extends AppCompatActivity {
         local.setText(pacote.getLocal());
     }
 }
+
